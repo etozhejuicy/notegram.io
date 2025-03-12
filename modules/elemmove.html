@@ -14,7 +14,7 @@
             <div class="container">
                 <!-- Хлебные крошки -->
                 <div class="breadcrumbs">
-                    <a href="/">Главная</a>
+                    <a href="../">Главная</a>
                     <!-- Разделитель обозначается тегом <span></span> -->
                     <span></span>
                     <a href="./index.html">Модули</a>
@@ -27,13 +27,29 @@
                     Инструмент, позволяющий выбрать селектор, который вы хотите перемещать в зависимости от вашего условия из пункта А в пункт Б.
                 </p>
                 <div class="layout layout-column">
-                    <article class="card">
+                    <article class="card" id="elemmove">
                         <p>
-                            Здесь вы сможете выбрать параметры:
+                            <b>
+                                Здесь вы сможете выбрать параметры:
+                            </b>
                         </p>
-                        <select class="input">
-                            <option value="0" selected>elem</option>
-                            <option value="1">elem 1</option>
+                        <p>
+                            Переместить откуда:
+                        </p>
+                        <select class="input" id="from">
+                            <option value="from_0" selected>Place selector 1</option>
+                            <option value="from_1">Place selector 2</option>
+                        </select>
+
+                        <br />
+                        <br />
+
+                        <p>
+                            Переместить куда:
+                        </p>
+                        <select class="input" id="to">
+                            <option value="to_0" selected>Place selector 1</option>
+                            <option value="to_1">Place selector 2</option>
                         </select>
                     </article>
                 </div>
@@ -42,6 +58,7 @@
     </main>
 
     <script src="../src/js/app.js"></script>
+    <script src="../src/js/modules/elemmove.js"></script>
 </body>
 
 </html>
