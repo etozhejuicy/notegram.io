@@ -1,0 +1,49 @@
+// vars
+@import "./variables";
+
+// layouts
+@import "./layouts/card";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.04em;
+    color: var(--dark);
+    background-color: #ffffff;
+
+    @media (max-width: 991px) {
+        padding-bottom: 59.5px;
+    }
+
+    @media (max-width: 720px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 576px) {
+        padding-bottom: 57px;
+    }
+}
+
+main {
+    flex: 1;
+}

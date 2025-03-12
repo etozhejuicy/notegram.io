@@ -1,0 +1,15 @@
+.card {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 15px;
+    border: 1px solid var(--grey);
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0px var(--light-grey);
+    background-color: #ffffff;
+    transition: 0.25s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 10px 0px var(--grey);
+    }
+}
