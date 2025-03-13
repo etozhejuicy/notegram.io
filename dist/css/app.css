@@ -1,6 +1,7 @@
 @charset "UTF-8";
+@import "../../src/scss/vendor/nice-select.css";
 :root {
-  --blue: #1b48ab;
+  --blue: #093aa3;
   --orange: #e1873d;
   --dark: #333333;
   --dark-grey: #515151;
@@ -576,12 +577,13 @@ button {
 }
 .btn:hover,
 button:hover {
-  background-color: var(--orange);
-  border-color: var(--orange);
+  background-color: var(--dark-grey);
+  border-color: var(--dark-grey);
 }
 .btn:focus:active,
 button:focus:active {
   border-color: transparent;
+  background-color: var(--dark);
 }
 .btn.disabled, .btn:disabled,
 button.disabled,
@@ -1382,11 +1384,24 @@ label.tabs-button > input {
   cursor: pointer;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.form-group-filled {
+  width: 100%;
+}
+.form-group-filled > * {
+  width: 100%;
+}
+
 .nice-select {
   padding: 10px 12px;
   padding-right: 40px;
   border-color: var(--grey);
-  border-radius: 0;
+  border-radius: 8px;
   background-color: #ffffff;
   font-weight: 400;
   font-size: 15px;
@@ -1398,36 +1413,18 @@ label.tabs-button > input {
   }
 }
 .nice-select::after {
-  content: "x";
-  font-family: "stelecom" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  border: 0;
-  top: 50%;
-  width: 15px;
-  height: 15px;
-  margin: 0;
-  transform: rotate(0deg) translateY(-50%);
-  transform-origin: center center;
+  width: 8px;
+  height: 8px;
 }
 .nice-select:focus, .nice-select.open {
   border-color: var(--grey);
-}
-.nice-select.open::after {
-  transform: rotate(0deg) translateY(-50%);
 }
 .nice-select .list {
   z-index: 15;
   margin: 5px 0 0 0;
   padding: 10px 12px;
   border-color: var(--grey);
-  border-radius: 0;
+  border-radius: 8px;
   background-color: #ffffff;
 }
 .nice-select .option {
@@ -1436,7 +1433,7 @@ label.tabs-button > input {
   background-color: transparent;
   color: var(--dark-grey);
   line-height: 1.25;
-  padding: 2.5px 20px 2.5px 0;
+  padding: 5px 20px 5px 0;
 }
 .nice-select .option:hover, .nice-select .option:focus, .nice-select .option.focus {
   color: var(--dark);
@@ -1454,7 +1451,7 @@ label.tabs-button > input {
   position: absolute;
   top: 50%;
   right: 0;
-  content: "z";
+  content: "✓";
   font-family: "stelecom" !important;
   font-style: normal !important;
   font-weight: normal !important;

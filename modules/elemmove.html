@@ -24,39 +24,76 @@
 
                 <h1>Перемещение элемента</h1>
                 <p>
-                    Инструмент, позволяющий выбрать селектор, который вы хотите перемещать в зависимости от вашего условия из пункта А в пункт Б.
+                    Инструмент, позволяющий выбрать селектор, который вы хотите перемещать в зависимости от вашего
+                    условия из пункта А в пункт Б.
                 </p>
                 <div class="layout layout-column">
-                    <article class="card" id="elemmove">
-                        <p>
-                            <b>
-                                Здесь вы сможете выбрать параметры:
-                            </b>
-                        </p>
-                        <p>
-                            Переместить откуда:
-                        </p>
-                        <select class="input" id="from">
-                            <option value="from_0" selected>Place selector 1</option>
-                            <option value="from_1">Place selector 2</option>
-                        </select>
+                    <article class="card">
+                        <form class="layout layout-column" id="generatorForm">
 
-                        <br />
-                        <br />
+                            <div class="form-group form-group-filled">
+                                <label for="moveElement">Элемент, который мы хотим перемещать:</label>
+                                <input type="text" id="moveElement" required>
+                            </div>
 
-                        <p>
-                            Переместить куда:
-                        </p>
-                        <select class="input" id="to">
-                            <option value="to_0" selected>Place selector 1</option>
-                            <option value="to_1">Place selector 2</option>
-                        </select>
+                            <div class="form-group form-group-filled">
+                                <label for="targetElement">Элемент, куда мы будем перемещать:</label>
+                                <input type="text" id="targetElement" required>
+                            </div>
+
+                            <div class="form-group form-group-filled">
+                                <label for="returnElement">Элемент, куда мы будем возвращать:</label>
+                                <input type="text" id="returnElement" required>
+                            </div>
+
+                            <div class="form-group form-group-filled">
+                                <label for="condition">Условие (JavaScript):</label>
+                                <textarea id="condition" placeholder="if (условие) { ... }" rows="4"></textarea>
+                            </div>
+
+                            <div class="form-group form-group-filled">
+                                <label for="event">Событие:</label>
+                                <input type="text" id="event" value="resize" required>
+                            </div>
+
+
+                            <div class="form-group form-group-filled">
+                                <label for="position">Позиция перемещения:</label>
+
+                                <select id="position">
+                                    <option value="start">В начало</option>
+                                    <option value="end">В конец</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group form-group-filled">
+                                <label for="mobileCondition">Условие для мобильных:</label>
+
+                                <select id="mobileCondition">
+                                    <option value="always">Всегда</option>
+                                    <option value="mobile">Только для мобильных</option>
+                                    <option value="desktop">Только для десктопов</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <button type="button" id="generateCode">Сгенерировать код</button>
+                            </div>
+
+                            <div class="form-group form-group-filled">
+                                <label for="outputCode">Сгенерированный код:</label>
+                                <textarea id="outputCode" rows="4" readonly></textarea>
+                            </div>
+
+                        </form>
                     </article>
                 </div>
             </div>
         </section>
     </main>
 
+    <script src="../src/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="../src/js/vendor/jquery.nice-select.min.js"></script>
     <script src="../src/js/app.js"></script>
     <script src="../src/js/modules/elemmove.js"></script>
 </body>
