@@ -2,6 +2,7 @@
 @import "../../src/scss/vendor/nice-select.css";
 :root {
   --blue: #093aa3;
+  --purple: #7111c5;
   --orange: #e1873d;
   --dark: #333333;
   --dark-grey: #515151;
@@ -221,6 +222,31 @@ section {
 }
 .bg-orange {
   background-color: var(--orange) !important;
+}
+.bg-purple {
+  background-color: var(--purple) !important;
+}
+
+.border-grey {
+  border-color: var(--grey) !important;
+}
+.border-light-grey {
+  border-color: var(--light-grey) !important;
+}
+.border-dark {
+  border-color: var(--dark) !important;
+}
+.border-dark-grey {
+  border-color: var(--dark-grey) !important;
+}
+.border-blue {
+  border-color: var(--blue) !important;
+}
+.border-orange {
+  border-color: var(--orange) !important;
+}
+.border-purple {
+  border-color: var(--purple) !important;
 }
 
 .stretched-link::after {
@@ -525,11 +551,11 @@ ol li::marker {
   align-self: center;
   justify-content: center;
   width: 7px;
-  font-size: 12px;
+  font-size: 20px;
 }
 @media (max-width: 720px) {
   .breadcrumbs > *:nth-child(even) {
-    font-size: 10px;
+    font-size: 16px;
   }
 }
 .breadcrumbs > *:nth-child(even)::before {
