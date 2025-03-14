@@ -31,8 +31,8 @@ body {
     font-size: 16px;
     line-height: 1.25;
     letter-spacing: -0.04em;
-    color: var(--dark);
-    background-color: #ffffff;
+    color: light-dark(var(--dark), #f0f0f0);
+    background-color: light-dark(#ffffff, #212121);
 
     @media (max-width: 991px) {
         padding-bottom: 59.5px;

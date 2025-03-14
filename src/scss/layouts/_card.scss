@@ -3,13 +3,13 @@
     z-index: 1;
     display: block;
     padding: 15px;
-    border: 1px solid var(--grey);
+    border: 1px solid light-dark(var(--grey), var(--dark));
     border-radius: 8px;
-    box-shadow: 0 0 10px 0px var(--light-grey);
-    background-color: #ffffff;
+    box-shadow: 0 0 10px 0px light-dark(var(--light-grey), #0f0f0f);
+    background-color: light-dark(#ffffff, var(--dark));
     transition: 0.25s ease-in-out;
 
     &:hover {
-        box-shadow: 0 0 10px 0px var(--grey);
+        box-shadow: 0 0 10px 0px light-dark(var(--light-grey), #2f2f2f);
     }
 }
