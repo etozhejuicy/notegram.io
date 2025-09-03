@@ -1,58 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=no">
-    <meta name="description" content="Notegram - помощник веб-разработчика с набором модулей и готовых решений для ускорения создания приложений. Идеально для новичков и профессионалов.">
-    <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="./dist/css/app.min.css" />
-    <title>Notegram.io</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1, shrink-to-fit=no, user-scalable=no">
+	<meta name="description" content="Превратите своих подписчиков из соцсетей в реальную аудиторию для всего, что вам важно. Notegram — это простой и элегантный сервис для создания персональной страницы со всеми вашими ссылками." />
+	<meta name="format-detection" content="telephone=no">
+	<title>Notegram: Единая ссылка для всех ваших соцсетей, проектов и контента</title>
+
+	<!-- primary styles -->
+	<link rel="stylesheet" href="./dist/css/app.min.css" />
 </head>
 
-<body>
-    <main>
-        <section>
-            <div class="container">
-                <h1>Notegram - Помощник веб-разработчика</h1>
-                <h2>
-                    Набор модулей и готовых решений для веб-разработки
-                </h2>
+<body id="app">
+	<!-- header -->
+	<header class="header">
+		<div class="container">
+			<div class="header-inner">
+				<a href="./" class="header-logo h3">
+					Notegram
+				</a>
 
-                <div class="layout layout-column">
-                    <div class="layout">
-                        <a href="./modules/index.html" class="btn btn-grey">
-                            Модули
-                        </a>
+				<nav>
+					<a href="./generate.html">
+						Генерация
+					</a>
+					<a href="./about.html">
+						О сервисе
+					</a>
+				</nav>
+			</div>
+		</div>
+	</header>
 
-                        <a href="./tools/index.html" class="btn btn-grey">
-                            Инструменты
-                        </a>
+	<!-- main -->
+	<main>
+		<!-- hero section -->
+		<section class="section-hero">
+			<div class="container">
+				<h1>
+					 Вся ваша цифровая жизнь — в одной ссылке
+				</h1>
 
-                        <a href="./pages/about.html" class="btn btn-grey">
-                            О платформе
-                        </a>
+				<h2>
+					Ведите аудиторию по всем вашим ссылкам одним кликом
+				</h2>
 
-                        <a href="./pages/test.html" class="btn btn-grey">
-                            Тестовая
-                        </a>
-                    </div>
+				<form id="generation">
+					<input id="instagram" type="text" value="" placeholder="Instagram" />
+					<input id="vk" type="text" value="" placeholder="VK" />
+					<input id="twitter" type="text" value="" placeholder="Twitter" />
+					<input id="telegram" type="text" value="" placeholder="Telegram" />
+				</form>
 
-                    <div class="layout layout-2x">
-                        <article class="card">
-                            <p>
-                                <strong>Notegram</strong> — это инструмент, созданный для упрощения и ускорения процесса веб-разработки. Платформа предлагает набор модулей и готовых решений, которые помогут разработчикам сосредоточиться на творческих аспектах их работы, минимизируя рутинные задачи и повышая общую продуктивность.
-                            </p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+				<div class="card" id="profile"></div>
+			</div>
+		</section>
+	</main>
 
-    <script src="./src/js/vendor/jquery-3.7.1.min.js"></script>
-    <script src="./src/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="./src/js/app.js"></script>
+	<!-- footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-inner">
+				<a href="./" class="header-logo h3">
+					Notegram
+				</a>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- scripts -->
+	<script src="./src/js/app.js"></script>
 </body>
 
 </html>

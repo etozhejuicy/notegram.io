@@ -1,52 +1,48 @@
 // vendor
-@import "../../src/scss/vendor/nice-select.css";
+@import './vendor/normalize';
 
 // vars
-@import "./variables";
+@import './variables';
 
 // layouts
-@import "./layouts/card";
+@import './layouts/header';
+@import './layouts/menu';
+@import './layouts/footer';
+@import './layouts/modal';
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    overflow: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.25;
-    letter-spacing: -0.04em;
-    color: light-dark(var(--dark), #f0f0f0);
-    background-color: light-dark(#ffffff, #212121);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+  color: light-dark(var(--dark), var(--white));
+  background: light-dark(var(--white), var(--dark-darker-2));
+  overflow-x: clip;
 
-    @media (max-width: 991px) {
-        padding-bottom: 59.5px;
-    }
-
-    @media (max-width: 720px) {
-        font-size: 14px;
-    }
-
-    @media (max-width: 576px) {
-        padding-bottom: 57px;
-    }
+  @media (max-width: 991.98px) {
+    font-size: 14px;
+  }
 }
 
 main {
-    flex: 1;
+  flex: 1;
 }

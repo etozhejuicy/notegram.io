@@ -1,0 +1,119 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background: light-dark(var(--light-grey), var(--dark-grey-darker-2));
+  padding: 16px 0;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid light-dark(var(--light-grey), var(--dark-grey-darker-2));
+  transition: 0.25s ease-in-out;
+
+  @media (max-width: 991.98px) {
+    flex-direction: row;
+  }
+
+  &-logo {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    text-decoration: none !important;
+    color: light-dark(var(--dark), var(--white));
+    text-shadow: 0 0 4px light-dark(var(--white), var(--dark));
+    transform-origin: center;
+    transition: 0.25s ease-in-out;
+    will-change: transform;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      display: block;
+      width: 60px;
+      height: 20px;
+      filter: blur(6px);
+      border-radius: 100%;
+      background: radial-gradient(circle, light-dark(rgba(2, 0, 36, 0.125), rgba(2, 0, 36, 0.5)) 0%, light-dark(rgba(9, 9, 121, 0.5), rgba(9, 9, 121, 1)) 35%, light-dark(rgba(0, 212, 255, 0.5), rgba(0, 212, 255, 1)) 100%);
+      pointer-events: none;
+      user-select: none;
+      transform-origin: center;
+      transform: translate(-50%, -50%);
+      transition: 0.25s ease-in-out;
+    }
+
+    &:hover {
+      transform: rotate(-2.5deg);
+
+      &::before {
+        transform: scale(1.5) rotate(2.5deg) translate(-30%, -40%);
+      }
+    }
+
+    & > img,
+    & > svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  & .btn-burger {
+    display: none;
+    background-color: transparent;
+    border-color: transparent;
+    border: 0;
+    box-shadow: none;
+    font-size: 16px;
+    color: var(--dark);
+
+    @media (max-width: 991.98px) {
+      display: block;
+      padding: 4px 10px;
+      color: #ffffff;
+    }
+
+    &:hover,
+    &.hover {
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    &:focus:active,
+    &.focus,
+    &.active {
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    &[data-menu='open'] {
+      & > * {
+        &:first-of-type {
+          display: none !important;
+        }
+
+        &:last-of-type {
+          display: flex !important;
+        }
+      }
+    }
+
+    &[data-menu='closed'] {
+      & > * {
+        &:first-of-type {
+          display: flex !important;
+        }
+
+        &:last-of-type {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
