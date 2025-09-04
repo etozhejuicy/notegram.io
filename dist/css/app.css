@@ -3077,6 +3077,12 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
     border-radius: 0 0 12px 12px;
   }
 }
+.header-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+}
 .header-logo {
   position: relative;
   z-index: 1;

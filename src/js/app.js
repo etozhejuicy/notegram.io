@@ -21,6 +21,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const profile = app.querySelector("#profile");
   const data = {};
 
+  form.clear;
+
   // Инициализация данных
   Object.keys(platforms).forEach(platform => {
     const input = form.querySelector(`#${platform}`);
@@ -41,12 +43,15 @@ window.addEventListener("DOMContentLoaded", () => {
         hasContent = true;
         const link = document.createElement("a");
         link.href = platforms[platform].url + value;
-        link.textContent = platforms[platform].name;
+        link.setAttribute('title', platforms[platform].name);
+        link.innerHTML = `<img src="../assets/icons/${platforms[platform].name.toLowerCase()}.svg" />`;
         link.target = "_blank";
-        link.classList.add("profile-link");
+        link.classList.add("social-link");
         profile.appendChild(link);
       }
     });
+
+    console.log(document.cookie);
 
     profile.style.display = hasContent ? "block" : "none";
   };

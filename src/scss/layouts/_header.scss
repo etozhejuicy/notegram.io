@@ -17,6 +17,13 @@
     border-radius: 0 0 12px 12px;
   }
 
+  &-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+  }
+
   &-logo {
     position: relative;
     z-index: 1;
