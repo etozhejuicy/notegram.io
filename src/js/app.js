@@ -1,102 +1,67 @@
 const app = document.getElementById("app");
 
+if (!app) {
+  throw new Error("App container not found");
+}
+
+// Конфигурация поддерживаемых платформ
+const platforms = {
+  facebook: { name: "Facebook", url: "https://facebook.com/" },
+  email: { name: "Email", url: "mailto:" },
+  github: { name: "GitHub", url: "https://github.com/" },
+  instagram: { name: "Instagram", url: "https://instagram.com/" },
+  twitter: { name: "Twitter", url: "https://twitter.com/" },
+  telegram: { name: "Telegram", url: "https://t.me/" },
+  whatsapp: { name: "WhatsApp", url: "https://wa.me/" },
+  vk: { name: "VK", url: "https://vk.com/" }
+};
+
 window.addEventListener("DOMContentLoaded", () => {
-  if (!app) return;
+  const form = app.querySelector("#generation");
+  const profile = app.querySelector("#profile");
+  const data = {};
 
-  if (app) {
-    console.log("Application has been executed!");
+  // Инициализация данных
+  Object.keys(platforms).forEach(platform => {
+    const input = form.querySelector(`#${platform}`);
+    if (input) {
+      data[platform] = input.value.trim() || null;
+    }
+  });
 
-    const form = app?.querySelector("#generation");
-    const inputs = form?.querySelectorAll("input");
+  profile.style.display = "none";
 
-    let facebook = form?.querySelector("#facebook").value;
-    let email = form?.querySelector("#email").value;
-    let github = form?.querySelector("#github").value;
-    let instagram = form?.querySelector("#instagram").value;
-    let twitter = form?.querySelector("#twitter").value;
-    let telegram = form?.querySelector("#telegram").value;
-    let whatsapp = form?.querySelector("#whatsapp").value;
-    let vk = form?.querySelector("#vk").value;
+  // Функция обновления профиля
+  const updateProfile = () => {
+    profile.innerHTML = "";
+    let hasContent = false;
 
-    let profile = app?.querySelector("#profile");
-
-    let data = {
-      facebook: facebook || null,
-      email: email || null,
-      github: github || null,
-      instagram: instagram || null,
-      twitter: twitter || null,
-      telegram: telegram || null,
-      whatsapp: whatsapp || null,
-      vk: vk || null,
-    };
-
-    profile.style.display = "none";
-
-    // update data's
-    inputs.forEach((input) => {
-      input.addEventListener("change", (e) => {
-        switch (e.currentTarget.id) {
-          case "facebook":
-            data.facebook = e.currentTarget.value;
-            console.log(data);
-            break;
-          case "github":
-            data.github = e.currentTarget.value;
-            console.log(data);
-            break;
-          case "email":
-            data.email = e.currentTarget.value;
-            console.log(data);
-            break;
-          case "instagram":
-            data.instagram = e.currentTarget.value;
-            console.log(data);
-            break;
-          case "vk":
-            data.vk = e.currentTarget.value;
-            console.log(data);
-            break;
-          case "twitter":
-            data.twitter = e.currentTarget.value;
-            console.log(data);
-            break;
-          case "whatsapp":
-            data.whatsapp = e.currentTarget.value;
-            console.log(data);
-            break;
-          case "telegram":
-            data.telegram = e.currentTarget.value;
-            console.log(data);
-            break;
-        }
-
-        if (
-          data.email === null &&
-          data.facebook === null &&
-          data.github === null &&
-          data.instagram === null &&
-          data.vk === null &&
-          data.whatsapp === null &&
-          data.twitter === null &&
-          data.telegram === null
-        ) {
-          profile.style.display = "none";
-        } else {
-          profile.style.display = "block";
-
-          profile.innerHTML = `
-            ${data.email ? `email: ${data.email}` : ""}
-            ${data.github ? `github: ${data.github}` : ""}
-            ${data.whatsapp ? `whatsapp: ${data.whatsapp}` : ""}
-            ${data.instagram ? `instagram: ${data.instagram}` : ""}
-            ${data.facebook ? `facebook: ${data.facebook}` : ""}
-            ${data.twitter ? `twitter: ${data.twitter}` : ""}
-            ${data.telegram ? `telegram: ${data.telegram}` : ""}
-            ${data.vk ? `vk: ${data.vk}` : ""}
-            `;
-        }
-      });
+    Object.entries(data).forEach(([platform, value]) => {
+      if (value) {
+        hasContent = true;
+        const link = document.createElement("a");
+        link.href = platforms[platform].url + value;
+        link.textContent = platforms[platform].name;
+        link.target = "_blank";
+        link.classList.add("profile-link");
+        profile.appendChild(link);
+      }
     });
-  }
+
+    profile.style.display = hasContent ? "block" : "none";
+  };
+
+  // Обработчик событий
+  form.addEventListener("input", (e) => {
+    if (!e.target.matches("input")) return;
+
+    const platform = e.target.id;
+    if (platforms[platform]) {
+      data[platform] = e.target.value.trim() || null;
+      updateProfile();
+    }
+  });
+
+  // Первоначальное обновление
+  updateProfile();
 });
