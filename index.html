@@ -5,7 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0, maximum-scale=1, shrink-to-fit=no, user-scalable=no">
-	<meta name="description" content="Превратите своих подписчиков из соцсетей в реальную аудиторию для всего, что вам важно. Notegram — это простой и элегантный сервис для создания персональной страницы со всеми вашими ссылками." />
+	<meta name="description"
+		content="Превратите своих подписчиков из соцсетей в реальную аудиторию для всего, что вам важно. Notegram — это простой и элегантный сервис для создания персональной страницы со всеми вашими ссылками." />
 	<meta name="format-detection" content="telephone=no">
 	<title>Notegram: Единая ссылка для всех ваших соцсетей, проектов и контента</title>
 
@@ -22,12 +23,9 @@
 					Notegram
 				</a>
 
-				<nav>
+				<nav class="menu">
 					<a href="./generate.html">
 						Генерация
-					</a>
-					<a href="./about.html">
-						О сервисе
 					</a>
 				</nav>
 			</div>
@@ -40,18 +38,64 @@
 		<section class="section-hero">
 			<div class="container">
 				<h1>
-					 Вся ваша цифровая жизнь — в одной ссылке
+					Вся ваша цифровая жизнь — в одной ссылке
 				</h1>
 
 				<h2>
 					Ведите аудиторию по всем вашим ссылкам одним кликом
 				</h2>
 
-				<form id="generation">
-					<input id="instagram" type="text" value="" placeholder="Instagram" />
-					<input id="vk" type="text" value="" placeholder="VK" />
-					<input id="twitter" type="text" value="" placeholder="Twitter" />
-					<input id="telegram" type="text" value="" placeholder="Telegram" />
+				<form class="form" id="generation">
+					<div class="form--inputs">
+						<label>
+							<b>
+								Github:
+							</b>
+							<input id="github" type="text" value="" placeholder="Github" />
+						</label>
+						<label>
+							<b>
+								Email:
+							</b>
+							<input id="email" type="text" value="" placeholder="Email" />
+						</label>
+						<label>
+							<b>
+								Facebook:
+							</b>
+							<input id="facebook" type="text" value="" placeholder="Facebook" />
+						</label>
+						<label>
+							<b>
+								Whatsapp:
+							</b>
+							<input id="whatsapp" type="text" value="" placeholder="Whatsapp" />
+						</label>
+						<label>
+							<b>
+								Instagram:
+							</b>
+							<input id="instagram" type="text" value="" placeholder="Instagram" />
+						</label>
+						<label>
+							<b>
+								VK:
+							</b>
+							<input id="vk" type="text" value="" placeholder="VK" />
+						</label>
+						<label>
+							<b>
+								Twitter:
+							</b>
+							<input id="twitter" type="text" value="" placeholder="Twitter" />
+						</label>
+						<label>
+							<b>
+								Telegram:
+							</b>
+							<input id="telegram" type="text" value="" placeholder="Telegram" />
+						</label>
+					</div>
 				</form>
 
 				<div class="card" id="profile"></div>

@@ -1,285 +1,285 @@
-@use 'sass:math';
+@use "sass:math";
 
-@import './functions';
-@import './colors';
-@import './mixins';
+@import "./functions";
+@import "./colors";
+@import "./mixins";
 
 // variables
-$font-family: 'SF UI Display', sans-serif;
-$sizes: 'xs', 'sm', 'md', 'lg', 'xl', 'xxl';
-$colors: 'blue', 'red', 'green', 'white', 'black', 'dark', 'light', 'grey',
-  'purple', 'orange', 'yellow';
+$font-family: "SF UI Display", sans-serif;
+$sizes: "xs", "sm", "md", "lg", "xl", "xxl";
+$colors: "blue", "red", "green", "white", "black", "dark", "light", "grey",
+  "purple", "orange", "yellow";
 
 // main fonts
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('../../assets/fonts/SFUIText-LightItalic.eot');
-  src: local('SF UI Text LightItalic'), local('SFUIText-LightItalic'),
-    url('../../assets/fonts/SFUIText-LightItalic.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIText-LightItalic.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIText-LightItalic.woff') format('woff'),
-    url('../../assets/fonts/SFUIText-LightItalic.ttf') format('truetype');
+  font-family: "SF UI Text";
+  src: url("../../assets/fonts/SFUIText-LightItalic.eot");
+  src: local("SF UI Text LightItalic"), local("SFUIText-LightItalic"),
+    url("../../assets/fonts/SFUIText-LightItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIText-LightItalic.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIText-LightItalic.woff") format("woff"),
+    url("../../assets/fonts/SFUIText-LightItalic.ttf") format("truetype");
   font-weight: 200;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'SF UI Display';
-  src: url('../../assets/fonts/SFUIDisplay-Regular.eot');
-  src: local('SF UI Display Regular'), local('SFUIDisplay-Regular'),
-    url('../../assets/fonts/SFUIDisplay-Regular.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIDisplay-Regular.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIDisplay-Regular.woff') format('woff'),
-    url('../../assets/fonts/SFUIDisplay-Regular.ttf') format('truetype');
+  font-family: "SF UI Display";
+  src: url("../../assets/fonts/SFUIDisplay-Regular.eot");
+  src: local("SF UI Display Regular"), local("SFUIDisplay-Regular"),
+    url("../../assets/fonts/SFUIDisplay-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIDisplay-Regular.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIDisplay-Regular.woff") format("woff"),
+    url("../../assets/fonts/SFUIDisplay-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('../../assets/fonts/SFUIText-RegularItalic.eot');
-  src: local('SF UI Text Regular Italic'), local('SFUIText-RegularItalic'),
-    url('../../assets/fonts/SFUIText-RegularItalic.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIText-RegularItalic.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIText-RegularItalic.woff') format('woff'),
-    url('../../assets/fonts/SFUIText-RegularItalic.ttf') format('truetype');
+  font-family: "SF UI Text";
+  src: url("../../assets/fonts/SFUIText-RegularItalic.eot");
+  src: local("SF UI Text Regular Italic"), local("SFUIText-RegularItalic"),
+    url("../../assets/fonts/SFUIText-RegularItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIText-RegularItalic.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIText-RegularItalic.woff") format("woff"),
+    url("../../assets/fonts/SFUIText-RegularItalic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'SF UI Display';
-  src: url('../../assets/fonts/SFUIDisplay-Ultralight.eot');
-  src: local('SF UI Display Ultralight'), local('SFUIDisplay-Ultralight'),
-    url('../../assets/fonts/SFUIDisplay-Ultralight.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIDisplay-Ultralight.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIDisplay-Ultralight.woff') format('woff'),
-    url('../../assets/fonts/SFUIDisplay-Ultralight.ttf') format('truetype');
+  font-family: "SF UI Display";
+  src: url("../../assets/fonts/SFUIDisplay-Ultralight.eot");
+  src: local("SF UI Display Ultralight"), local("SFUIDisplay-Ultralight"),
+    url("../../assets/fonts/SFUIDisplay-Ultralight.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIDisplay-Ultralight.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIDisplay-Ultralight.woff") format("woff"),
+    url("../../assets/fonts/SFUIDisplay-Ultralight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('../../assets/fonts/SFUIText-SemiboldItalic.eot');
-  src: local('SF UI Text SemiboldItalic'), local('SFUIText-SemiboldItalic'),
-    url('../../assets/fonts/SFUIText-SemiboldItalic.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIText-SemiboldItalic.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIText-SemiboldItalic.woff') format('woff'),
-    url('../../assets/fonts/SFUIText-SemiboldItalic.ttf') format('truetype');
+  font-family: "SF UI Text";
+  src: url("../../assets/fonts/SFUIText-SemiboldItalic.eot");
+  src: local("SF UI Text SemiboldItalic"), local("SFUIText-SemiboldItalic"),
+    url("../../assets/fonts/SFUIText-SemiboldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIText-SemiboldItalic.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIText-SemiboldItalic.woff") format("woff"),
+    url("../../assets/fonts/SFUIText-SemiboldItalic.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'SF UI Display';
-  src: url('../../assets/fonts/SFUIDisplay-Heavy.eot');
-  src: local('SF UI Display Heavy'), local('SFUIDisplay-Heavy'),
-    url('../../assets/fonts/SFUIDisplay-Heavy.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIDisplay-Heavy.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIDisplay-Heavy.woff') format('woff'),
-    url('../../assets/fonts/SFUIDisplay-Heavy.ttf') format('truetype');
+  font-family: "SF UI Display";
+  src: url("../../assets/fonts/SFUIDisplay-Heavy.eot");
+  src: local("SF UI Display Heavy"), local("SFUIDisplay-Heavy"),
+    url("../../assets/fonts/SFUIDisplay-Heavy.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIDisplay-Heavy.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIDisplay-Heavy.woff") format("woff"),
+    url("../../assets/fonts/SFUIDisplay-Heavy.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('../../assets/fonts/SFUIText-Heavy.eot');
-  src: local('SF UI Text Heavy'), local('SFUIText-Heavy'),
-    url('../../assets/fonts/SFUIText-Heavy.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIText-Heavy.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIText-Heavy.woff') format('woff'),
-    url('../../assets/fonts/SFUIText-Heavy.ttf') format('truetype');
+  font-family: "SF UI Text";
+  src: url("../../assets/fonts/SFUIText-Heavy.eot");
+  src: local("SF UI Text Heavy"), local("SFUIText-Heavy"),
+    url("../../assets/fonts/SFUIText-Heavy.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIText-Heavy.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIText-Heavy.woff") format("woff"),
+    url("../../assets/fonts/SFUIText-Heavy.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Display';
-  src: url('../../assets/fonts/SFUIDisplay-Black.eot');
-  src: local('SF UI Display Black'), local('SFUIDisplay-Black'),
-    url('../../assets/fonts/SFUIDisplay-Black.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIDisplay-Black.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIDisplay-Black.woff') format('woff'),
-    url('../../assets/fonts/SFUIDisplay-Black.ttf') format('truetype');
+  font-family: "SF UI Display";
+  src: url("../../assets/fonts/SFUIDisplay-Black.eot");
+  src: local("SF UI Display Black"), local("SFUIDisplay-Black"),
+    url("../../assets/fonts/SFUIDisplay-Black.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIDisplay-Black.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIDisplay-Black.woff") format("woff"),
+    url("../../assets/fonts/SFUIDisplay-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('../../assets/fonts/SFUIText-Semibold.eot');
-  src: local('SF UI Text Semibold'), local('SFUIText-Semibold'),
-    url('../../assets/fonts/SFUIText-Semibold.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIText-Semibold.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIText-Semibold.woff') format('woff'),
-    url('../../assets/fonts/SFUIText-Semibold.ttf') format('truetype');
+  font-family: "SF UI Text";
+  src: url("../../assets/fonts/SFUIText-Semibold.eot");
+  src: local("SF UI Text Semibold"), local("SFUIText-Semibold"),
+    url("../../assets/fonts/SFUIText-Semibold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIText-Semibold.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIText-Semibold.woff") format("woff"),
+    url("../../assets/fonts/SFUIText-Semibold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Display';
-  src: url('../../assets/fonts/SFUIDisplay-Semibold.eot');
-  src: local('SF UI Display Semibold'), local('SFUIDisplay-Semibold'),
-    url('../../assets/fonts/SFUIDisplay-Semibold.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIDisplay-Semibold.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIDisplay-Semibold.woff') format('woff'),
-    url('../../assets/fonts/SFUIDisplay-Semibold.ttf') format('truetype');
+  font-family: "SF UI Display";
+  src: url("../../assets/fonts/SFUIDisplay-Semibold.eot");
+  src: local("SF UI Display Semibold"), local("SFUIDisplay-Semibold"),
+    url("../../assets/fonts/SFUIDisplay-Semibold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIDisplay-Semibold.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIDisplay-Semibold.woff") format("woff"),
+    url("../../assets/fonts/SFUIDisplay-Semibold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('../../assets/fonts/SFUIText-Medium.eot');
-  src: local('SF UI Text Medium'), local('SFUIText-Medium'),
-    url('../../assets/fonts/SFUIText-Medium.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIText-Medium.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIText-Medium.woff') format('woff'),
-    url('../../assets/fonts/SFUIText-Medium.ttf') format('truetype');
+  font-family: "SF UI Text";
+  src: url("../../assets/fonts/SFUIText-Medium.eot");
+  src: local("SF UI Text Medium"), local("SFUIText-Medium"),
+    url("../../assets/fonts/SFUIText-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIText-Medium.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIText-Medium.woff") format("woff"),
+    url("../../assets/fonts/SFUIText-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('../../assets/fonts/SFUIText-Light.eot');
-  src: local('SF UI Text Light'), local('SFUIText-Light'),
-    url('../../assets/fonts/SFUIText-Light.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIText-Light.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIText-Light.woff') format('woff'),
-    url('../../assets/fonts/SFUIText-Light.ttf') format('truetype');
+  font-family: "SF UI Text";
+  src: url("../../assets/fonts/SFUIText-Light.eot");
+  src: local("SF UI Text Light"), local("SFUIText-Light"),
+    url("../../assets/fonts/SFUIText-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIText-Light.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIText-Light.woff") format("woff"),
+    url("../../assets/fonts/SFUIText-Light.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Display';
-  src: url('../../assets/fonts/SFUIDisplay-Bold.eot');
-  src: local('SF UI Display Bold'), local('SFUIDisplay-Bold'),
-    url('../../assets/fonts/SFUIDisplay-Bold.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIDisplay-Bold.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIDisplay-Bold.woff') format('woff'),
-    url('../../assets/fonts/SFUIDisplay-Bold.ttf') format('truetype');
+  font-family: "SF UI Display";
+  src: url("../../assets/fonts/SFUIDisplay-Bold.eot");
+  src: local("SF UI Display Bold"), local("SFUIDisplay-Bold"),
+    url("../../assets/fonts/SFUIDisplay-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIDisplay-Bold.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIDisplay-Bold.woff") format("woff"),
+    url("../../assets/fonts/SFUIDisplay-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('../../assets/fonts/SFUIText-Regular.eot');
-  src: local('SF UI Text Regular'), local('SFUIText-Regular'),
-    url('../../assets/fonts/SFUIText-Regular.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIText-Regular.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIText-Regular.woff') format('woff'),
-    url('../../assets/fonts/SFUIText-Regular.ttf') format('truetype');
+  font-family: "SF UI Text";
+  src: url("../../assets/fonts/SFUIText-Regular.eot");
+  src: local("SF UI Text Regular"), local("SFUIText-Regular"),
+    url("../../assets/fonts/SFUIText-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIText-Regular.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIText-Regular.woff") format("woff"),
+    url("../../assets/fonts/SFUIText-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Display';
-  src: url('../../assets/fonts/SFUIDisplay-Thin.eot');
-  src: local('SF UI Display Thin'), local('SFUIDisplay-Thin'),
-    url('../../assets/fonts/SFUIDisplay-Thin.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIDisplay-Thin.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIDisplay-Thin.woff') format('woff'),
-    url('../../assets/fonts/SFUIDisplay-Thin.ttf') format('truetype');
+  font-family: "SF UI Display";
+  src: url("../../assets/fonts/SFUIDisplay-Thin.eot");
+  src: local("SF UI Display Thin"), local("SFUIDisplay-Thin"),
+    url("../../assets/fonts/SFUIDisplay-Thin.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIDisplay-Thin.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIDisplay-Thin.woff") format("woff"),
+    url("../../assets/fonts/SFUIDisplay-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('../../assets/fonts/SFUIText-BoldItalic.eot');
-  src: local('SF UI Text BoldItalic'), local('SFUIText-BoldItalic'),
-    url('../../assets/fonts/SFUIText-BoldItalic.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIText-BoldItalic.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIText-BoldItalic.woff') format('woff'),
-    url('../../assets/fonts/SFUIText-BoldItalic.ttf') format('truetype');
+  font-family: "SF UI Text";
+  src: url("../../assets/fonts/SFUIText-BoldItalic.eot");
+  src: local("SF UI Text BoldItalic"), local("SFUIText-BoldItalic"),
+    url("../../assets/fonts/SFUIText-BoldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIText-BoldItalic.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIText-BoldItalic.woff") format("woff"),
+    url("../../assets/fonts/SFUIText-BoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('../../assets/fonts/SFUIText-Bold.eot');
-  src: local('SF UI Text Bold'), local('SFUIText-Bold'),
-    url('../../assets/fonts/SFUIText-Bold.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIText-Bold.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIText-Bold.woff') format('woff'),
-    url('../../assets/fonts/SFUIText-Bold.ttf') format('truetype');
+  font-family: "SF UI Text";
+  src: url("../../assets/fonts/SFUIText-Bold.eot");
+  src: local("SF UI Text Bold"), local("SFUIText-Bold"),
+    url("../../assets/fonts/SFUIText-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIText-Bold.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIText-Bold.woff") format("woff"),
+    url("../../assets/fonts/SFUIText-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Display';
-  src: url('../../assets/fonts/SFUIDisplay-Medium.eot');
-  src: local('SF UI Display Medium'), local('SFUIDisplay-Medium'),
-    url('../../assets/fonts/SFUIDisplay-Medium.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIDisplay-Medium.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIDisplay-Medium.woff') format('woff'),
-    url('../../assets/fonts/SFUIDisplay-Medium.ttf') format('truetype');
+  font-family: "SF UI Display";
+  src: url("../../assets/fonts/SFUIDisplay-Medium.eot");
+  src: local("SF UI Display Medium"), local("SFUIDisplay-Medium"),
+    url("../../assets/fonts/SFUIDisplay-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIDisplay-Medium.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIDisplay-Medium.woff") format("woff"),
+    url("../../assets/fonts/SFUIDisplay-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('../../assets/fonts/SFUIText-HeavyItalic.eot');
-  src: local('SF UI Text HeavyItalic'), local('SFUIText-HeavyItalic'),
-    url('../../assets/fonts/SFUIText-HeavyItalic.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIText-HeavyItalic.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIText-HeavyItalic.woff') format('woff'),
-    url('../../assets/fonts/SFUIText-HeavyItalic.ttf') format('truetype');
+  font-family: "SF UI Text";
+  src: url("../../assets/fonts/SFUIText-HeavyItalic.eot");
+  src: local("SF UI Text HeavyItalic"), local("SFUIText-HeavyItalic"),
+    url("../../assets/fonts/SFUIText-HeavyItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIText-HeavyItalic.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIText-HeavyItalic.woff") format("woff"),
+    url("../../assets/fonts/SFUIText-HeavyItalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'SF UI Display';
-  src: url('../../assets/fonts/SFUIDisplay-Light.eot');
-  src: local('SF UI Display Light'), local('SFUIDisplay-Light'),
-    url('../../assets/fonts/SFUIDisplay-Light.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIDisplay-Light.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIDisplay-Light.woff') format('woff'),
-    url('../../assets/fonts/SFUIDisplay-Light.ttf') format('truetype');
+  font-family: "SF UI Display";
+  src: url("../../assets/fonts/SFUIDisplay-Light.eot");
+  src: local("SF UI Display Light"), local("SFUIDisplay-Light"),
+    url("../../assets/fonts/SFUIDisplay-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIDisplay-Light.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIDisplay-Light.woff") format("woff"),
+    url("../../assets/fonts/SFUIDisplay-Light.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('../../assets/fonts/SFUIText-MediumItalic.eot');
-  src: local('SF UI Text MediumItalic'), local('SFUIText-MediumItalic'),
-    url('../../assets/fonts/SFUIText-MediumItalic.eot?#iefix')
-      format('embedded-opentype'),
-    url('../../assets/fonts/SFUIText-MediumItalic.woff2') format('woff2'),
-    url('../../assets/fonts/SFUIText-MediumItalic.woff') format('woff'),
-    url('../../assets/fonts/SFUIText-MediumItalic.ttf') format('truetype');
+  font-family: "SF UI Text";
+  src: url("../../assets/fonts/SFUIText-MediumItalic.eot");
+  src: local("SF UI Text MediumItalic"), local("SFUIText-MediumItalic"),
+    url("../../assets/fonts/SFUIText-MediumItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/SFUIText-MediumItalic.woff2") format("woff2"),
+    url("../../assets/fonts/SFUIText-MediumItalic.woff") format("woff"),
+    url("../../assets/fonts/SFUIText-MediumItalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
 }
@@ -840,7 +840,7 @@ section {
 // stretched-link
 .stretched-link {
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -1246,17 +1246,17 @@ ol {
 
   @each $size in $sizes {
     &-#{$size} {
-      @if $size == 'xs' {
+      @if $size == "xs" {
         @include shadow-xs;
-      } @else if $size == 'sm' {
+      } @else if $size == "sm" {
         @include shadow-sm;
-      } @else if $size == 'md' {
+      } @else if $size == "md" {
         @include shadow-md;
-      } @else if $size == 'lg' {
+      } @else if $size == "lg" {
         @include shadow-lg;
-      } @else if $size == 'xl' {
+      } @else if $size == "xl" {
         @include shadow-xl;
-      } @else if $size == 'xxl' {
+      } @else if $size == "xxl" {
         @include shadow-xxl;
       }
     }
@@ -1313,7 +1313,7 @@ ol {
       }
 
       &::before {
-        content: '›';
+        content: "›";
         font-style: normal !important;
         font-weight: normal !important;
         font-variant: normal !important;
@@ -1483,12 +1483,12 @@ button {
     &-#{$color} {
       @include button(var(--#{$color}), var(--white));
 
-      @if $color == 'white' {
+      @if $color == "white" {
         color: var(--dark);
         border-color: var(--grey);
-      } @else if $color == 'yellow' {
+      } @else if $color == "yellow" {
         color: var(--dark);
-      } @else if $color == 'orange' {
+      } @else if $color == "orange" {
         color: var(--dark);
       }
     }
@@ -1524,7 +1524,7 @@ button {
 }
 
 // checkbox & radio
-input[type='checkbox'] {
+input[type="checkbox"] {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -1540,7 +1540,7 @@ input[type='checkbox'] {
 
   & ~ label {
     &::before {
-      content: '';
+      content: "";
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1559,7 +1559,7 @@ input[type='checkbox'] {
   &:checked {
     & ~ label {
       &::before {
-        content: '';
+        content: "";
         background-color: var(--blue);
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
         background-position: center;
@@ -1572,7 +1572,7 @@ input[type='checkbox'] {
   }
 }
 
-input[type='radio'] {
+input[type="radio"] {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -1590,7 +1590,7 @@ input[type='radio'] {
     background: transparent;
 
     &::before {
-      content: '';
+      content: "";
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1614,7 +1614,7 @@ input[type='radio'] {
   &:checked {
     & ~ label {
       &::before {
-        content: '';
+        content: "";
         background-color: transparent;
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%232655b8'/%3e%3c/svg%3e");
         background-size: cover;
@@ -1648,7 +1648,7 @@ input[type='radio'] {
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 2px;
       left: 0;
@@ -1686,7 +1686,7 @@ input[type='radio'] {
           background: transparent;
 
           &::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
@@ -1715,7 +1715,7 @@ input[type='radio'] {
         & ~ label {
           & > span {
             &::before {
-              content: '';
+              content: "";
               background-color: var(--blue);
               background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
               background-position: center;
@@ -1792,7 +1792,7 @@ input[type='radio'] {
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -1906,7 +1906,7 @@ input[type='radio'] {
           background: transparent;
 
           &::before {
-            content: '';
+            content: "";
             position: absolute;
             top: -1px;
             left: 0;
@@ -1942,7 +1942,7 @@ input[type='radio'] {
         & ~ label {
           & > span {
             &::before {
-              content: '';
+              content: "";
               background-color: transparent;
               background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%235097D6'/%3e%3c/svg%3e");
               background-size: cover;
@@ -1960,16 +1960,16 @@ input[type='radio'] {
 
 // Стили для всех input
 .input,
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='number'],
-input[type='search'],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
 textarea {
   @include input;
 }
 
-input[type='number'] {
+input[type="number"] {
   appearance: textfield;
 
   &::-webkit-outer-spin-button,
@@ -1991,7 +1991,7 @@ input[type='number'] {
     max-width: 100%;
     height: 40px;
 
-    & input[type='file'] {
+    & input[type="file"] {
       position: absolute;
       z-index: -1;
       opacity: 0;
@@ -2061,7 +2061,7 @@ input[type='number'] {
     transform: translateY(-50%);
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 50%;
@@ -2072,7 +2072,7 @@ input[type='number'] {
     }
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -2108,17 +2108,25 @@ input[type='number'] {
 
 // form
 .form {
-  &-appointment,
-  &-order,
-  &-question {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &--inputs {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 16px;
 
-    &--inputs {
+    & > * {
+      flex: 1 1 0%;
+    }
+
+    & > label {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 8px;
+      width: fit-content;
     }
   }
 
@@ -2574,7 +2582,7 @@ input[type='number'] {
       transition: 0.25s ease-in-out;
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -2806,8 +2814,8 @@ label {
   }
 
   &::after {
-    content: '\78';
-    font-family: 'stelecom' !important;
+    content: "\78";
+    font-family: "stelecom" !important;
     font-style: normal !important;
     font-weight: normal !important;
     font-variant: normal !important;
@@ -2875,8 +2883,8 @@ label {
         position: absolute;
         top: 50%;
         right: 0;
-        content: '\7a';
-        font-family: 'stelecom' !important;
+        content: "\7a";
+        font-family: "stelecom" !important;
         font-style: normal !important;
         font-weight: normal !important;
         font-variant: normal !important;
@@ -2913,12 +2921,12 @@ label {
     cursor: pointer;
 
     &::after {
-      content: '\0055';
+      content: "\0055";
       position: absolute;
       top: 4px;
       right: 0;
       color: var(--dark-grey);
-      font-family: 'lh' !important;
+      font-family: "lh" !important;
       font-style: normal !important;
       font-weight: normal !important;
       font-variant: normal !important;
